@@ -1,33 +1,17 @@
-'''
-Exercício de revisão
-Exercício de classes em Python
- 
-Exercício: Classe Aluno
-Enunciado
-
-Crie uma classe chamada Aluno que represente um estudante.
-A classe deve:
-    Ter um construtor (__init__) com os atributos:
-        nome
-        nota
-Ter um método chamado situacao() que:
-    Retorne "Aprovado" se a nota for maior ou igual a 10
-    Retorne "Reprovado" caso contrário
-Depois:
-    Crie dois objetos da classe Aluno
-    Mostre o nome, a nota e a situação de cada aluno
-'''
-
-# Classe que representa um Avatar no jogo
+# Classe Aluno representa um estudante com nome e nota
 class Aluno:
     def __init__(self, nome, nota):
+        # Atributo que guarda o nome do aluno
         self.nome = nome
+        
+        # Atributo que guarda a nota do aluno
         self.nota = nota
 
+    # Método que verifica se o aluno está aprovado ou reprovado
     def situacao(self):
-        if self.nota >= 7:
+        # Se a nota for maior ou igual a 10 → aprovado
+        if self.nota >= 10:
             print(f"{self.nome} você foi Aprovado!")
         else:
+            # Caso contrário → reprovado
             print(f"{self.nome} você foi Reprovado!")
-            
-
