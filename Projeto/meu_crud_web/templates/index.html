@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Utilizadores</title>
+</head>
+
+<body>
+
+    <!-- Título principal da página -->
+    <h1>Lista de Utilizadores</h1>
+
+    <!-- Link para a página de novo utilizador -->
+    <p><a href="/novo">+ Novo utilizador</a></p>
+
+    <!-- Tabela que apresenta os utilizadores vindos da base de dados -->
+    <table border="1" cellpadding="6">
+        <tr>
+            <!-- Cabeçalho da tabela -->
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Criado em</th>
+            <th>Ações</th>
+        </tr>
+
+        <!-- Loop Jinja2 que percorre todos os utilizadores enviados pelo Flask -->
+        {% for u in utilizadores %}
+        <tr>
+            <!-- Cada coluna recebe um valor do dicionário retornado pelo SELECT -->
+            <td>{{ u.id }}</td>
+            <td>{{ u.nome }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.created_at }}</td>
+
+            <!-- Coluna das ações (editar/apagar) -->
+            <td>
+                <!-- Link para editar utilizador, passando o ID na URL -->
+                <a href="/editar/{{ u.id }}">Editar</a>
+
+                <!-- Formulário para apagar (POST evita apagar por URL direta) -->
+                <form action="/apagar/{{ u.id }}" method="post" style="display:inline;">
+                    <button type="submit">Apagar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        <!-- Fim do loop -->
+
+    </table>
+
+</body>
+
+</html>
