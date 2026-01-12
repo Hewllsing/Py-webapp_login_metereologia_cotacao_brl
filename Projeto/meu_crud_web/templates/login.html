@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+    <!-- O título da página é dinâmico e recebido pelo Flask -->
+    <title>{{ titulo }}</title>
+
+    
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+
+<body>
+
+    <!-- Título principal da página - também dinâmico -->
+    <h1>{{ titulo }}</h1>
+
+    {% with msgs = get_flashed_messages() %}
+        {% if msgs %}
+            <ul>
+                {% for m in msgs %}
+                    <li> {{ m }}</li>
+                    {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Formulário enviado via método POST -->
+    <form method="post">
+
+        <!-- Campo de username -->
+        <p>
+            Username:<br>
+            <!-- Preenche automaticamente caso seja edição (opcional) -->
+            <input type="text" name="username" required
+                value="{{ login.username if login else '' }}">
+        </p>
+
+        <!-- Campo de password -->
+        <p>
+            Password:<br>
+            <input type="password" name="password" required>
+        </p>
+
+        <!-- Botão para enviar os dados -->
+        <button type="submit">Entrar</button>
+
+        <!-- Link para voltar à página inicial sem salvar -->
+        <a href="/">Cancelar</a>
+
+    </form>
+
+</body>
+
+</html>

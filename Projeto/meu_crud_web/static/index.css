@@ -1,0 +1,108 @@
+/* ---------------------------------------------------
+    Reset básico
+--------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------------------------------------------------
+    Corpo da página
+--------------------------------------------------- */
+body {
+    background-color: #f5f6fa;
+    /* fundo suave */
+    padding: 20px;
+}
+
+/* ---------------------------------------------------
+    Título principal
+--------------------------------------------------- */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2f3640;
+}
+
+/* ---------------------------------------------------
+    Link "Novo utilizador"
+--------------------------------------------------- */
+a {
+    text-decoration: none;
+    color: #273c75;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #192a56;
+}
+
+/* ---------------------------------------------------
+    Tabela
+--------------------------------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* remove espaçamento entre células */
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #273c75;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f2f6;
+}
+
+/* ---------------------------------------------------
+    Botões dentro da tabela
+--------------------------------------------------- */
+button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+form button {
+    background-color: #e84118;
+    color: #fff;
+}
+
+form button:hover {
+    background-color: #c23616;
+}
+
+/* ---------------------------------------------------
+    Links de ação (Editar)
+--------------------------------------------------- */
+td a {
+    background-color: #44bd32;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+td a:hover {
+    background-color: #4cd137;
+}
