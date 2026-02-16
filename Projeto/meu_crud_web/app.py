@@ -182,7 +182,7 @@ def novo():
 
 
 # ---------------------------------------------------
-# Rota para criar novo Login // PRECISO TERMINAR
+# Rota para criar novo Login 
 # ---------------------------------------------------
 
 @app.route("/register", methods=["GET", "POST"])

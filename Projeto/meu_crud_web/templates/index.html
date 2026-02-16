@@ -31,7 +31,7 @@
                 <a href="/editar_admin/{{ u.id }}">Editar</a>
 
                 <!-- Formulário para apagar (POST evita apagar por URL direta) -->
-                <form action="/apagar_admin/{{ u.id }}" method="post" style="display:inline;">
+                <form action="/apagar{{ u.id }}" method="post" style="display:inline;">
                     <button type="submit">Apagar</button>
                 </form>
                 {% endif %}
